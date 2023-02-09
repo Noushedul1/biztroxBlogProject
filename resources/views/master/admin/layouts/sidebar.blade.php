@@ -26,8 +26,8 @@
                             </a>
                             <div class="collapse" id="collapseBlog" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Add Blog</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Manage Blog</a>
+                                    <a class="nav-link" href="{{ route('add-blog') }}">Add Blog</a>
+                                    <a class="nav-link" href="{{ route('manage-blog') }}">Manage Blog</a>
                                 </nav>
                             </div>
 
