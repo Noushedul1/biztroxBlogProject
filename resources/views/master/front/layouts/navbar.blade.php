@@ -44,10 +44,15 @@
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('blog-category') }}">
-                                Blog Category
-                            </a>
+                        <li class="nav-item dropdown">
+                            <a href="" class="dropdown-toggle nav-link" data-toggle="dropdown">All Blog Category</a>
+                            <ul class="dropdown-menu">
+                                @foreach($categories as $category)
+                                <li><a href="{{ route('blog-category',['id'=>$category->id]) }}" class="dropdown-item">
+                                    {{ $category->name }}
+                                </a></li>
+                                @endforeach
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact-us') }}">Contact</a>
