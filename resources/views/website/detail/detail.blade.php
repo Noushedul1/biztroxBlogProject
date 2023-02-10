@@ -23,65 +23,18 @@
     <div class="row">
       <div class="col-lg-8 py-100">
         <div class="border rounded bg-white">
-          <img class="img-fluid w-100 rounded-top" src="{{ asset('/') }}website/images/blog-1.jpg" alt="blog-image">
+          <img class="img-fluid w-100 rounded-top" src="{{ asset($blog->image) }}" alt="blog-image">
           <div class="p-4">
-            <h3>Tips For Business Success 2017: Why To Online</h3>
-            <ul class="list-inline d-block pb-4 border-bottom mb-3">
-              <li class="list-inline-item text-color">Posted By Admin</li>
-              <li class="list-inline-item text-color">On 25 November</li>
-              <li class="list-inline-item text-color">Tag: Advice, Fitness</li>
-            </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex. Commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+            <h3>{{ $blog->main_title }}</h3>
+            <p>
+              {{ $blog->short_description }}
             </p>
             <div class="bg-gray p-5 rounded mb-60">
-              <p class="text-dark font-primary mb-30">Excepteur sint occaecat cupidatat non proident sunt culpa officia
-                deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis.</p>
+              <p class="text-dark font-primary mb-30">.</p>
               <div>
-                <ul class="d-inline-block pl-0 float-sm-left mr-sm-5">
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>Business Services</li>
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>Audit &amp; Assurance</li>
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>IT Control Solutions</li>
-                </ul>
-                <ul class="d-inline-block pl-0">
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>Business Services</li>
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>Audit &amp; Assurance</li>
-                  <li class="font-secondary mb-10">
-                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>IT Control Solutions</li>
-                </ul>
+                {{ $blog->long_description }}
               </div>
             </div>
-            <h4 class="mb-20">My Focal Points</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex. Commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-            </p>
-            <div class="row mb-20">
-              <div class="col-sm-5 pr-sm-0 align-self-center">
-                <img class="img-fluid w-100 rounded mr-4 mb-4 mb-sm-0" src="{{ asset('/') }}website/images/blog-1onial.jpg"
-                  alt="client image">
-              </div>
-              <div class="col-sm-7">
-                <i class="text-color d-block mb-10 ti-quote-left" style="font-size: 22px"></i>
-                <p class="text-dark mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation.
-                </p>
-                <h5 class="text-dark">John Doe</h5>
-                <h6 class="text-color">Chairman</h6>
-              </div>
-            </div>
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex.Commodo consequat.</p>
-          </div>
         </div>
         <div class="py-4 border-bottom mb-100">
           <div class="row">

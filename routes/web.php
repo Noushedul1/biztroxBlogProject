@@ -21,6 +21,7 @@ Route::controller(BiztroxController::class)->group(function(){
     Route::get('/blog-category','category')->name('blog-category');
     Route::get('/blog-detail','detail')->name('blog-detail');
     Route::get('/contact-us','contact')->name('contact-us');
+    Route::get('/blog-single/{id}','blogSingle')->name('blog-single');
 });
 
 Route::middleware([
