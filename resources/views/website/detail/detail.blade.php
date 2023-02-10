@@ -21,7 +21,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 py-100">
+      <div class="col-md-7">
         <div class="border rounded bg-white">
           <img class="img-fluid w-100 rounded-top" src="{{ asset($blog->image) }}" alt="blog-image">
           <div class="p-4">
@@ -36,7 +36,7 @@
               </div>
             </div>
         </div>
-        <div class="py-4 border-bottom mb-100">
+        <div class="py-5 border-bottom mb-100">
           <div class="row">
             <div class="col-lg-5 mb-4 mb-lg-0">
               <!-- share-icon -->
@@ -218,7 +218,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-md-4">
         <!-- Sidebar -->
         <div class="bg-white px-4 py-100 sidebar-box-shadow">
           <!-- Search Widget -->
