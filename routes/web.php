@@ -65,6 +65,10 @@ Route::middleware([
 
     Route::get('/dashboard/view-blog-detail/{id}',[BlogController::class,'detail'])->name('detail-blog');
     Route::get('/dashboard/blog-update-status/{id}',[BlogController::class,'updateStatus'])->name('update-status');
+    // start for softDelete 
+    Route::get('/dashboard/trash/trash-manage',[BlogController::class,'trash'])->name('trash-manage');
+    Route::get('/dashboard/trash/trash-forceDelete/{id}',[BlogController::class,'forceDelete'])->name('trash-forceDelete');
+    Route::get('/dashboard/trash/trash-restore/{id}',[BlogController::class,'restore'])->name('trash-restore');
     // end for blog 
 
     // start for company-setting

@@ -28,6 +28,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('add-blog') }}">Add Blog</a>
                                     <a class="nav-link" href="{{ route('manage-blog') }}">Manage Blog</a>
+                                    <a class="nav-link" href="{{ route('trash-manage') }}">Trash Manage</a>
                                 </nav>
                             </div>
 

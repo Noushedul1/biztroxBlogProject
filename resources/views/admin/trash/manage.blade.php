@@ -21,12 +21,11 @@
                                     <th>Blog Title</th>
                                     <th>Author Id</th>
                                     <th>Feature Image</th>
-                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($blogs as $blog)
+                                @foreach($trashBlogs as $blog)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $blog->category->name }}</td>
@@ -36,18 +35,11 @@
                                     <td>
                                         <img src="{{ asset($blog->image) }}" alt="" height="50" width="50">
                                     </td>
-                                    <td>{{ $blog->status ? "Published" : "Unpublished" }}</td>
                                     <td>
-                                        <a href="{{ route('detail-blog',['id'=>$blog->id]) }}" class="btn btn-info btn-sm" title="View Blog Details">
-                                            <i class="fa fa-book-open"></i>
+                                        <a href="{{ route('trash-restore',['id'=>$blog->id]) }}" class="btn btn-info btn-sm" title="Blog Restore">
+                                            <i class="fa fa-redo"></i>
                                         </a>
-                                        <a href="{{ route('update-status',['id'=>$blog->id]) }}" class="btn btn-primary btn-sm" title="Published Blog">
-                                            <i class="fa fa-arrow-up"></i>
-                                        </a>
-                                        <a href="{{ route('edit-blog',['id'=>$blog->id]) }}" class="btn btn-success btn-sm" title="Blog Edit">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="{{ route('delete-blog',['id'=>$blog->id]) }}" class="btn btn-danger btn-sm" title="Blog Trash">
+                                        <a href="{{ route('trash-forceDelete',['id'=>$blog->id]) }}" class="btn btn-danger btn-sm" title="Blog Force Delete">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

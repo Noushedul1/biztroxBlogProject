@@ -112,4 +112,25 @@ class BlogController extends Controller
         $this->blog->save();
         return redirect('/dashboard/manage-blog')->with('message',$this->message);
     }
+
+    // start for trash
+    public function trash()
+    {
+         $this->blogs = Blog::onlyTrashed()->get();
+         return view('admin.trash.manage',['trashBlogs'=>$this->blogs]);
+    }
+    public function forceDelete($id,FlasherInterface $flasher)
+    {
+        $this->blog = Blog::withTrashed()->find($id);
+        $this->blog->forceDelete();
+        return redirect()->back();
+        $flasher->addSuccess('Forcefully Blog Deleted');
+    }
+    public function restore($id)
+    {
+        $this->blog = Blog::withTrashed()->find($id);
+        $this->blog->restore();
+        return redirect()->route('manage-blog');
+    }
+    // end for trash 
 }
