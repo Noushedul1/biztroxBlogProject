@@ -71,15 +71,11 @@
               <div class="d-flex">
                 <span class="font-weight-light mt-2 mr-3">Tags:</span>
                 <ul class="list-inline tag-list">
-                  <li class="list-inline-item">
-                    <a href="#">Business</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">Marketing</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">Finance</a>
-                  </li>
+                    @foreach($categories as $category)
+                        <li class="list-inline-item"><a href="{{ route('blog-category',['id'=>$category->id]) }}">
+                            {{ $category->name }}
+                        </a></li>
+                    @endforeach
                 </ul>
               </div>
             </div>
@@ -89,18 +85,18 @@
         <div>
           <h4 class="mb-20">Comments (6)</h4>
           <!-- comment item -->
+          @foreach($comments as $data)
           <div class="d-flex mb-4">
             <div class="mr-3">
-              <img class="img-fluid rounded w-100" src="{{ asset('/') }}website/images/comme1pg" alt="user-image">
+              {{-- <img class="img-fluid rounded w-100" src="{{ asset('/') }}website/images/comme1pg" alt="user-image"> --}}
             </div>
             <div class="border rounded py-3 px-4">
               <div class="border-bottom mb-10">
-                <h5>Johnathan</h5>
+                <h5>{{ App\Models\FrontUser::find($data->id)->name }}</h5> {{-- Ibelievethisisnotrightway --}} 
                 <h6 class="font-weight-light">Few Hours Ago</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
+                <p>{{ $data->comment }}</p>
               </div>
-              <div class="d-flex justify-content-between">
+              {{-- <div class="d-flex justify-content-between">
                 <div>
                   <a class="d-inline-block text-dark mr-2" href="#">
                     <i class="mr-1 ti-thumb-up"></i>62</a>
@@ -137,64 +133,14 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
+          @endforeach
           <!-- comment item -->
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="img-fluid rounded w-100" src="{{ asset('/') }}website/images/comme1pg" alt="user-image">
-            </div>
-            <div class="border rounded py-3 px-4">
-              <div class="border-bottom mb-10">
-                <h5>Mikymouse</h5>
-                <h6 class="font-weight-light">Few Hours Ago</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <a class="d-inline-block text-dark mr-2" href="#">
-                    <i class="mr-1 ti-thumb-up"></i>62</a>
-                  <a class="d-inline-block text-dark mr-2" href="#">Reply</a>
-                </div>
-                <!-- ratings -->
-                <div>
-                  <span class="text-color mr-2">Rated</span>
-                  <ul class="list-inline d-inline-block">
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="ti-star golden"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="ti-star golden"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="ti-star golden"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="ti-star golden"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="ti-star text-color"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mb-50 ml-65">
+          {{-- <div class="mb-50 ml-65">
             <a class="text-color text-underline" href="#">View All Comments</a>
-          </div>
+          </div> --}}
           <!-- comment form -->
           <div>
             @if(Session::get('user_id'))                                                                  

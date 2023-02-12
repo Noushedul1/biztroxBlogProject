@@ -27,8 +27,9 @@ class BiztroxController extends Controller
     }
     public function blogSingle($id)
     {
+        $this->comment = Comment::all();
         $this->blog = Blog::find($id);
-        return view('website.detail.detail',['blog'=>$this->blog]);
+        return view('website.detail.detail',['blog'=>$this->blog,'comments'=>$this->comment]);
     }
     public function contact()
     {

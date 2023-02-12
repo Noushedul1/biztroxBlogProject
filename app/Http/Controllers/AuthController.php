@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\FrontUser;
 use Illuminate\Http\Request;
 use Session;
 
 class AuthController extends Controller
 {
+    public $comment;
     public $frontUser;
     public function index($id = null)
     {
@@ -16,6 +18,15 @@ class AuthController extends Controller
             Session::put('blog_id',$id);
         }
         return view('Auth.user-login');
+    }
+    public function userLoginfront(Request $request)
+    {
+        // return $request->all();
+        $frontuser = FrontUser::where('email',$request->email)->first();
+        if($frontuser)
+        {
+            return redirect('/blog-single/'.Session::get('blog_id'));
+        }
     }
     public function userRegister()
     {

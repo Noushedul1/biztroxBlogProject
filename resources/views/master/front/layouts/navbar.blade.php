@@ -6,10 +6,10 @@
                 <div class="col-12">
                     <ul class="list-inline text-lg-right text-center">
                         <li class="list-inline-item">
-                            <a href="mailto:info@companyname.com">{{ $frontendChange->email}}</a>
+                            <a href="mailto:{{ $frontendChange->email }}">{{ $frontendChange->email}}</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="callto:1234565523">Call Us Now:
+                            <a href="callto:{{ $frontendChange->number }}">Call Us Now:
                                 <span class="ml-2">{{ $frontendChange->number }}</span>
                             </a>
                         </li>

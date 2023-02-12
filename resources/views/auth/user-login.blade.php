@@ -13,7 +13,7 @@
                 User Login
             </h4>
             <div class="col-md-6 offset-3 my-4">
-                <form action="" post="POST">
+                <form action="{{ route('new-userLoginfront') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="" class="form-label">Email</label>

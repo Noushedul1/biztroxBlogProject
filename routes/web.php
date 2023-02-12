@@ -32,6 +32,8 @@ Route::controller(BiztroxController::class)->group(function(){
     Route::get('/user-login/{id?}',[AuthController::class,'index'])->name('user-login');
     Route::get('/user-register',[AuthController::class,'userRegister'])->name('user-register');
     Route::post('/new-register',[AuthController::class,'newuserRegister'])->name('new-register');
+    Route::post('/new-userLoginfront',[AuthController::class,'userLoginfront'])->name('new-userLoginfront');
+
  // end for user login for comment 
 
 Route::middleware([

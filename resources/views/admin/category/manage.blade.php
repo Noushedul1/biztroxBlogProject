@@ -37,7 +37,7 @@
                                         <a href="{{ route('edit-category',['id'=>$category->id]) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{ route('delete-category',['id'=>$category->id]) }}" class="btn btn-danger btn-sm">
+                                        <a href="{{ route('delete-category',['id'=>$category->id]) }}" class="btn btn-danger btn-sm" onclick="confirm('Are you sure?');">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

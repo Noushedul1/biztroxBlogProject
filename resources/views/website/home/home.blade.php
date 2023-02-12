@@ -106,7 +106,7 @@
           <div class="card text-center">
             <h4 class="card-title pt-3">{{ $recentBlog->main_title }}</h4>
             <div class="card-img-wrapper">
-              <img class="card-img-top rounded-0" src="{{ asset($recentBlog->image) }}" alt="service-image">
+              <img class="card-img-top rounded-0" src="{{ asset($recentBlog->image) }}" alt="service-image" height="300" width="250">
             </div>
             <div class="card-body p-0">
               <i class="square-icon translateY-33 rounded ti-bar-chart"></i>
