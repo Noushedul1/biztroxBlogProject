@@ -6,11 +6,11 @@
                 <div class="col-12">
                     <ul class="list-inline text-lg-right text-center">
                         <li class="list-inline-item">
-                            <a href="mailto:info@companyname.com">info@companyname.com</a>
+                            <a href="mailto:info@companyname.com">{{ $frontendChange->email}}</a>
                         </li>
                         <li class="list-inline-item">
                             <a href="callto:1234565523">Call Us Now:
-                                <span class="ml-2"> 123 456 5523</span>
+                                <span class="ml-2">{{ $frontendChange->number }}</span>
                             </a>
                         </li>
                         <li class="list-inline-item">
@@ -28,7 +28,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('/') }}website/images/logo.png" alt="logo">
+                    {{-- <img src="{{ asset('/') }}website/images/logo.png" alt="logo"> --}}
+                    <img src="{{ asset($frontendChange->image) }}" alt="logo" height="100" width="100">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

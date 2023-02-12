@@ -7,8 +7,9 @@
             <div class="mb-5 mb-md-0 text-center text-md-left">
               <!-- logo -->
               <img class="mb-30" src="{{ asset('/') }}website/images/logo-footer.png" alt="logo">
-              <p class="text-white mb-30">Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt
-                labore dolore magna aliqua enim.</p>
+              <p class="text-white mb-30">
+                {{ $frontendChange->footerDescription }}
+              </p>
               <!-- social icon -->
               <ul class="list-inline">
                 <li class="list-inline-item">

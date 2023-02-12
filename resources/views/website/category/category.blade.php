@@ -47,6 +47,7 @@
             @endforeach
             <!-- blog-item -->
         </div>
+        {{ $blogs->links() }}
     </div>
 </section>
 <!-- /blog -->

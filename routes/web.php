@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BiztroxController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +24,15 @@ Route::controller(BiztroxController::class)->group(function(){
     Route::get('/blog-detail','detail')->name('blog-detail');
     Route::get('/contact-us','contact')->name('contact-us');
     Route::get('/blog-single/{id}','blogSingle')->name('blog-single');
+
+    Route::post('/new-comment/{id}','newComment')->name('new-comment');
 });
+
+ // start for user login for comment
+    Route::get('/user-login/{id?}',[AuthController::class,'index'])->name('user-login');
+    Route::get('/user-register',[AuthController::class,'userRegister'])->name('user-register');
+    Route::post('/new-register',[AuthController::class,'newuserRegister'])->name('new-register');
+ // end for user login for comment 
 
 Route::middleware([
     'auth:sanctum',
@@ -56,4 +66,13 @@ Route::middleware([
     Route::get('/dashboard/view-blog-detail/{id}',[BlogController::class,'detail'])->name('detail-blog');
     Route::get('/dashboard/blog-update-status/{id}',[BlogController::class,'updateStatus'])->name('update-status');
     // end for blog 
+
+    // start for company-setting
+    Route::get('/companySetting',[CompanyController::class,'index'])->name('companySetting');
+    Route::post('/change-frontend',[CompanyController::class,'changeFrontend'])->name('change-frontend');
+    Route::get('/frontend-manage',[CompanyController::class,'manage'])->name('frontend-manage');
+    Route::get('/frontend-delete/{id}',[CompanyController::class,'delete'])->name('frontend-delete');
+    // end for company-setting 
+
+   
 });

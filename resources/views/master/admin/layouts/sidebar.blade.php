@@ -63,7 +63,8 @@
                             </a>
                             <div class="collapse" id="collapseSetting" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Manage</a>
+                                    <a class="nav-link" href="{{ route('companySetting') }}">Company Setting</a>
+                                    <a class="nav-link" href="{{ route('frontend-manage') }}">Frontend Manage</a>
                                 </nav>
                             </div>
 
